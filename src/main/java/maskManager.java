@@ -6,15 +6,16 @@ import java.util.ArrayList;
  */
 public class maskManager {
     private ArrayList<Mask> masks;
-
-    public maskManager() {
+    private int n;
+    public maskManager(int n) {
         masks = new ArrayList<Mask>();
+        this.n = n;
         String binaryString;
         int counter;
-        int countMasks = (int) (Math.pow(2, 9) - 1);
+        int countMasks = (int) (Math.pow(2, n - 1) - 1);
         for (int i = 1; i <= countMasks; i++) {
             binaryString = Integer.toBinaryString(i);
-            masks.add(new Mask());
+            masks.add(new Mask(n));
             counter = 1;
             for (int j = binaryString.length() - 1; j >= 0; j--) {
                 masks.get(i - 1).getMask().set(counter, Character.getNumericValue(binaryString.charAt(j)));

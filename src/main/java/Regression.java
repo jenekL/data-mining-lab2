@@ -16,7 +16,7 @@ public class Regression {
         values = new ArrayList<Value>();
         testValues = new ArrayList<Value>();
         polinoms = new ArrayList<Polinom>();
-        manager = new maskManager();
+        manager = new maskManager(countFields);
     }
 
     public void startLearning() {
@@ -132,6 +132,7 @@ public class Regression {
 
                 polinoms.get(i).iteratorSKO(sko);
             }
+            //System.out.println(polinoms.get(i).printPolinom());
             polinoms.get(i).sqrSKO(testValues.size());
             if (min > polinoms.get(i).getSKO()) {
                 min = polinoms.get(i).getSKO();

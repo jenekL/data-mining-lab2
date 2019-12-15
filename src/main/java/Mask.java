@@ -8,35 +8,12 @@ public class Mask {
     private ArrayList<Integer> mask;
     private int level;
 
-    public Mask() {
-        mask = new ArrayList<Integer>(10);
+    public Mask(int n) {
+        mask = new ArrayList<Integer>(n);
         mask.add(1);
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < n - 1; i++) {
             mask.add(0);
         }
-    }
-
-    public String printMask() {
-        StringBuilder str = new StringBuilder();
-        str.append(mask.get(0));
-        str.append(" ");
-        str.append(mask.get(1));
-        str.append(mask.get(2));
-        str.append(mask.get(3));
-        str.append(mask.get(4));
-        str.append(" ");
-        str.append(mask.get(5));
-        str.append(mask.get(6));
-        str.append(mask.get(7));
-        str.append(mask.get(8));
-        str.append(" ");
-        str.append(mask.get(9));
-
-        return str.toString();
-    }
-
-    public void createMask(int number) {
-
     }
 
     public ArrayList<Integer> getMask() {
